@@ -12,16 +12,16 @@ All code is in python 3 and relies on a number of dependencies that can be insta
 
 Contents
 --------
-* pvvm/*.py : Python module with functions for modeling PV generation, calculating PV revenues and capacity factors, and optimizing PV orientation.
-* notebooks/*.ipynb : Jupyter notebooks, including:
+* pvvm/\*.py : Python module with functions for modeling PV generation, calculating PV revenues and capacity factors, and optimizing PV orientation.
+* notebooks/\*.ipynb : Jupyter notebooks, including:
     * pvvm-pvtos-data.ipynb: Example scripts used to download and clean input LMP data, determine LMP node locations, and reproduce some figures in reference [1]
     * pvvm-pvtos-analysis.ipynb: Example scripts used to perform the calculations and reproduce some figures in reference [1]
     * pvvm-pvtos-plots.ipynb: Scripts used to produce additional figures in reference [1]
     * pvvm-example-generation.ipynb: Example scripts demonstrating the usage of the PV generation model and orientation optimization
-* html/*.html : Static images of the above Jupyter notebooks for viewing without a python kernel
-* data/lmp/*.gz : Day-ahead and real-time nodal locational marginal prices (LMPs) for CAISO, ERCOT, MISO, NYISO, and ISONE.
+* html/\*.html : Static images of the above Jupyter notebooks for viewing without a python kernel
+* data/lmp/\*.gz : Day-ahead and real-time nodal locational marginal prices (LMPs) for CAISO, ERCOT, MISO, NYISO, and ISONE.
     * At the time of publication of this repository, permission had not been received from PJM to republish their LMP data. If permission is received in the future, a new version of this repository will linked here with the complete dataset.
-* results/*.csv.gz : Simulation results associated with reference [1] above, including modeled revenue, capacity factor, and optimized orientations for PV systems at all LMP nodes
+* results/\*.csv.gz : Simulation results associated with reference [1] above, including modeled revenue, capacity factor, and optimized orientations for PV systems at all LMP nodes
 
 Data notes
 ----------
@@ -37,6 +37,6 @@ Data notes
 
 Usage notes
 -----------
-* Code is provided under the MIT License, as specified in the pvvm/LICENSE file and at the top of each *.py file.
+* Code is provided under the MIT License, as specified in the pvvm/LICENSE file and at the top of each \*.py file.
 * To use the NSRDB download functions, you will need to modify the "settings.py" file to insert a valid NSRDB API key, which can be requested from https://developer.nrel.gov/signup/. Locations can be specified by passing latitude, longitude floats to pvvm.data.downloadNSRDBfile(), or by passing a string googlemaps query to pvvm.io.queryNSRDBfile(). To use the googlemaps functionality, you will need to request a googlemaps API key (https://developers.google.com/maps/documentation/javascript/get-api-key) and insert it in the "settings.py" file.
 * Note that many of the ISO websites have changed in the time since the functions in the pvvm.data module were written and the LMP data used in the above papers were downloaded. As such, the pvvm.data.download_caiso_lmp_allnodes() and pvvm.data.download_lmps() functions no longer work for all ISOs and years. We provide these functions to illustrate the general procedure used, and do not intend to maintain them or keep them up to date with the changing ISO websites. For up-to-date functions for accessing ISO data, the following repository (no connection to the present work) may be helpful: https://github.com/catalyst-cooperative/pudl.
