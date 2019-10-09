@@ -1,6 +1,8 @@
-This repository includes python scripts and input/output data associated with the following publication:
+This repository includes python scripts associated with the following publication:
 
 [1] Brown, P.R.; O'Sullivan, F. "Shaping photovoltaic array output to align with changing wholesale electricity price profiles." Applied Energy 2019. https://doi.org/10.1016/j.apenergy.2019.113734
+
+Input/output data, including locational marginal electricity prices (LMPs) and simulation results, are included in the associated Zenodo repository at https://zenodo.org/record/3368397.
 
 Please cite reference [1] for full documentation if the contents of this repository are used for subsequent work.
 
@@ -19,11 +21,11 @@ Contents
     * pvvm-pvtos-plots.ipynb: Scripts used to produce additional figures in reference [1]
     * pvvm-example-generation.ipynb: Example scripts demonstrating the usage of the PV generation model and orientation optimization
 * html/\*.html : Static images of the above Jupyter notebooks for viewing without a python kernel
-* data/lmp/\*.gz : Day-ahead and real-time nodal locational marginal prices (LMPs) for CAISO, ERCOT, MISO, NYISO, and ISONE.
+<!-- * data/lmp/\*.gz : Day-ahead and real-time nodal locational marginal prices (LMPs) for CAISO, ERCOT, MISO, NYISO, and ISONE.
     * At the time of publication of this repository, permission had not been received from PJM to republish their LMP data. If permission is received in the future, a new version of this repository will linked here with the complete dataset.
-* results/\*.csv.gz : Simulation results associated with reference [1] above, including modeled revenue, capacity factor, and optimized orientations for PV systems at all LMP nodes
+* results/\*.csv.gz : Simulation results associated with reference [1] above, including modeled revenue, capacity factor, and optimized orientations for PV systems at all LMP nodes -->
 
-Data notes
+<!-- Data notes
 ----------
 * ISO LMP data are used with permission from the different ISOs. Adapting the MIT License (https://opensource.org/licenses/MIT), "The data are provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantibility, fitness for a particular purpose and noninfringement. In no event shall the authors or sources be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the data or other dealings with the data." Copyright and usage permissions for the LMP data are available on the ISO websites, linked below.
 * ISO-specific notes:
@@ -34,8 +36,8 @@ Data notes
     * NYISO data from http://mis.nyiso.com/public/ are used subject to the disclaimer at https://www.nyiso.com/legal-notice.
     * ISONE data are from https://www.iso-ne.com/isoexpress/web/reports/pricing/-/tree/lmps-da-hourly and https://www.iso-ne.com/isoexpress/web/reports/pricing/-/tree/lmps-rt-hourly-final. The Material is provided on an "as is" basis. ISO New England Inc., to the fullest extent permitted by law, disclaims all warranties, either express or implied, statutory or otherwise, including but not limited to the implied warranties of merchantability, non-infringement of third parties' rights, and fitness for particular purpose. Without limiting the foregoing, ISO New England Inc. makes no representations or warranties about the accuracy, reliability, completeness, date, or timeliness of the Material. ISO New England Inc. shall have no liability to you, your employer or any other third party based on your use of or reliance on the Material.
 * Data workup: LMP data were downloaded directly from the ISOs using scripts similar to the pvvm.data.download_lmps() function (see below for caveats), then repackaged into single-node single-year files using the pvvm.data.nodalize() function. These single-node single-year files were then combined into the dataframes included in this repository, using the procedure shown in the pvvm-pvtos-data.ipynb notebook for MISO. We provide these yearly dataframes, rather than the long-form data, to minimize file size and number. These dataframes can be unpacked into the single-node files used in the analysis using the pvvm.data.copylmps() function.
-
+ -->
 Usage notes
 -----------
 * To use the NSRDB download functions, you will need to modify the "settings.py" file to insert a valid NSRDB API key, which can be requested from https://developer.nrel.gov/signup/. Locations can be specified by passing latitude, longitude floats to pvvm.data.downloadNSRDBfile(), or by passing a string googlemaps query to pvvm.io.queryNSRDBfile(). To use the googlemaps functionality, you will need to request a googlemaps API key (https://developers.google.com/maps/documentation/javascript/get-api-key) and insert it in the "settings.py" file.
-* Note that many of the ISO websites have changed in the time since the functions in the pvvm.data module were written and the LMP data used in the above papers were downloaded. As such, the pvvm.data.download_caiso_lmp_allnodes() and pvvm.data.download_lmps() functions no longer work for all ISOs and years. We provide these functions to illustrate the general procedure used, and do not intend to maintain them or keep them up to date with the changing ISO websites. For up-to-date functions for accessing ISO data, the following repository (no connection to the present work) may be helpful: https://github.com/catalyst-cooperative/pudl.
+* Note that many of the ISO websites have changed in the time since the functions in the pvvm.data module were written and the LMP data used in the above papers were downloaded. As such, the pvvm.data.download_lmps() function no longer works for all ISOs and years. We provide this function to illustrate the general procedure used, and do not intend to maintain it or keep it up to date with the changing ISO websites. Condensed dataframes of the LMP data used in the studies referenced above are available in the Zenodo repository (https://zenodo.org/record/3368397).
