@@ -4,8 +4,8 @@ This repository includes python scripts associated with the following publicatio
 
 Input/output data, including locational marginal electricity prices (LMPs) and simulation results, are included in the associated Zenodo repository at https://zenodo.org/record/3368397.
 
-Please cite reference [1] for full documentation if the contents of this repository are used for subsequent work.
-
+<!-- Please cite reference [1] for full documentation if the contents of this repository are used for subsequent work.
+ -->
 Some of the scripts and data are also used in the following working paper:
 
 [2] Brown, P.R.; O'Sullivan, F. "Spatial and temporal variation in the value of solar power across United States Electricity Markets". Working Paper, MIT Center for Energy and Environmental Policy Research. 2019. http://ceepr.mit.edu/publications/working-papers/705
@@ -20,7 +20,7 @@ Contents
     * pvvm-pvtos-analysis.ipynb: Example scripts used to perform the calculations and reproduce some figures in reference [1]
     * pvvm-pvtos-plots.ipynb: Scripts used to produce additional figures in reference [1]
     * pvvm-example-generation.ipynb: Example scripts demonstrating the usage of the PV generation model and orientation optimization
-* html/\*.html : Static images of the above Jupyter notebooks for viewing without a python kernel
+<!-- * html/\*.html : Static images of the above Jupyter notebooks for viewing without a python kernel -->
 <!-- * data/lmp/\*.gz : Day-ahead and real-time nodal locational marginal prices (LMPs) for CAISO, ERCOT, MISO, NYISO, and ISONE.
     * At the time of publication of this repository, permission had not been received from PJM to republish their LMP data. If permission is received in the future, a new version of this repository will linked here with the complete dataset.
 * results/\*.csv.gz : Simulation results associated with reference [1] above, including modeled revenue, capacity factor, and optimized orientations for PV systems at all LMP nodes -->
