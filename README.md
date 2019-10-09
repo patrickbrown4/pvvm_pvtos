@@ -37,6 +37,5 @@ Data notes
 
 Usage notes
 -----------
-* Code is provided under the MIT License, as specified in the pvvm/LICENSE file and at the top of each \*.py file.
 * To use the NSRDB download functions, you will need to modify the "settings.py" file to insert a valid NSRDB API key, which can be requested from https://developer.nrel.gov/signup/. Locations can be specified by passing latitude, longitude floats to pvvm.data.downloadNSRDBfile(), or by passing a string googlemaps query to pvvm.io.queryNSRDBfile(). To use the googlemaps functionality, you will need to request a googlemaps API key (https://developers.google.com/maps/documentation/javascript/get-api-key) and insert it in the "settings.py" file.
 * Note that many of the ISO websites have changed in the time since the functions in the pvvm.data module were written and the LMP data used in the above papers were downloaded. As such, the pvvm.data.download_caiso_lmp_allnodes() and pvvm.data.download_lmps() functions no longer work for all ISOs and years. We provide these functions to illustrate the general procedure used, and do not intend to maintain them or keep them up to date with the changing ISO websites. For up-to-date functions for accessing ISO data, the following repository (no connection to the present work) may be helpful: https://github.com/catalyst-cooperative/pudl.
